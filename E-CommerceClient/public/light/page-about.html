@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+
+    <!-- Metas -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="HTML5 Template Geekfolio Multi-Purpose themeforest">
+    <meta name="description" content="Geekfolio - Multi-Purpose HTML5 Template">
+    <meta name="author" content="">
+
+    <!-- Title  -->
+    <title>Geekfolio</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/imgs/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+
+    <!-- Plugins -->
+    <link rel="stylesheet" href="assets/css/plugins.css">
+
+    <!-- Core Style Css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+
+/*formovelay*/
+#form-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Overlay'in arka plan rengi ve opaklığı */
+display: none;
+z-index: 9999; /* Formun diğer içeriklerin üzerinde olmasını sağlar */
+}
+
+#form-container {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: #fff;
+padding: 20px;
+border-radius: 30px;
+z-index: 10000; /* Overlay'in üzerinde yer alır */
+}
+
+#form-overlay.show {
+display: block;
+}
+
+.form-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: none;
+z-index: 9999;
+background-color: rgb(53, 159, 161);
+color: #fff;
+font-size: 18px;
+}
+
+.form-container {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+background-color: rgb(53, 159, 161);
+padding: 51px;
+border-radius: 78px;
+z-index: 10000;
+text-align: center;
+}
+
+.form-container input,
+.form-container textarea {
+font-size: 20px;
+padding: 10px;
+border-radius: 5px;
+border: none;
+margin-bottom: 10px;
+width: 100%;
+}
+
+.form-container button {
+font-size: 20px;
+padding: 10px 20px;
+border-radius: 5px;
+border: none;
+background-color: #333;
+color: #fff;
+cursor: pointer;
+}
+/*formoverlay*/
+
+.item-wrapper-info {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+}
+
+.logo-icons {
+width: 50px; /* İstediğiniz boyuta ayarlayın */
+height: 50px; /* İstediğiniz boyuta ayarlayın */
+margin-bottom: 5px;
+}
+
+
+.tab-button {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+width: 250px;
+height: 250px;
+border: none;
+background-color: #fff;
+border-radius: 5px;
+color: #000;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+
+
+.tab-button.active {
+background-color: #f1f1f1;
+}
+
+.current .tab-button.active{
+background-color: #187476;
+color:white;
+}
+
+
+
+
+
+
+
+.middleheaderarea {
+display: flex;
+align-items: center;
+justify-content: space-between;
+background-color: white;
+padding: 10px;
+}
+
+.middleheaderarea .text-center {
+margin-top: 20px;
+margin-bottom: 20px;
+}
+
+.middleheaderarea .contact-info {
+display: flex;
+align-items: center;
+justify-content: flex-end;
+margin-top: 10px;
+margin-bottom: 10px;
+color: #333;
+}
+.middleheaderarea .phone-link {
+text-decoration: none;
+font-weight: bold;
+
+}
+
+.middleheaderarea.phone-link:hover {
+text-decoration: underline;
+}
+
+.middleheaderarea .contact-info:hover {
+text-decoration: underline;
+}
+.middleheaderarea .contact-info i{
+margin-right: 17px;
+}
+.web-text-color{
+color: #206364;
+}
+
+.top-header-area {
+background-color: #206364;
+padding: 10px 0;
+}
+
+.top-header-area .contact-info {
+display: flex;
+align-items: center;
+margin-bottom: 10px;
+color: #fff;
+}
+
+.top-header-area .contact-info i {
+margin-right: 5px;
+}
+
+.top-header-area .social-icons {
+display: flex;
+align-items: center;
+}
+
+.top-header-area .social-icon {
+display: inline-block;
+width: 40px;
+height: 40px;
+line-height: 40px;
+text-align: center;
+border-radius: 50%;
+margin-left: 10px;
+color: #fff;
+transition: background-color 0.3s ease-in-out;
+}
+
+.top-header-area .social-icon:hover {
+background-color: #333;
+}
+
+.top-header-area .social-icon i {
+font-size: 18px;
+}
+
+.top-drop {
+position: relative;
+display: inline-block;
+}
+
+.top-drop-toggle {
+background-color: transparent;
+border: none;
+color: #333;
+font-size: 16px;
+font-weight: bold;
+padding: 0;
+cursor: pointer;
+}
+
+.top-drop-toggle .selected-language {
+margin-right: 5px;
+}
+
+.top-drop-toggle:focus {
+outline: none;
+}
+
+.top-drop-menu {
+position: absolute;
+top: 100%;
+left: 0;
+z-index: 1;
+display: none;
+min-width: 120px;
+padding: 8px 0;
+margin: 0;
+list-style: none;
+background-color: #fff;
+border: 1px solid #ddd;
+border-radius: 4px;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.top-drop-menu.show {
+display: block;
+margin-top: 17px;
+}
+
+.top-drop-item {
+display: block;
+padding: 6px 12px;
+font-size: 14px;
+line-height: 1.42857143;
+color: #333;
+white-space: nowrap;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.top-drop-item:hover,
+.top-drop-item:focus {
+background-color: #f5f5f5;
+text-decoration: none;
+}
+
+
+
+@media (max-width: 767px) {
+.middleheaderarea .logo {
+display: none;
+}
+.navbar.main-bg{
+background: white;
+}
+.navbar .logo{
+display: block !important;
+}
+.top-header-area{
+display: none;
+}
+.middleheaderarea{
+display: none;
+}
+}
+
+
+.img-vid {
+padding: 15px;
+border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.card-video{
+position: relative;
+padding: 15px;
+border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.video-container video {
+width: 100%;
+height: auto;
+max-width: 450px; /* Videoların maksimum genişliği */
+max-height: 600px; /* Videoların maksimum yüksekliği */
+}
+
+@media (max-width: 767px) {
+.video-container {
+    width: 100%;
+}
+}
+
+
+    </style>
+
+</head>
+
+<body class="main-bg">
+
+
+
+    <!-- ==================== Start Loading ==================== -->
+
+    <div class="loader-wrap">
+        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
+        </svg>
+
+        <div class="loader-wrap-heading">
+            <div class="load-text">
+                <span>L</span>
+                <span>o</span>
+                <span>a</span>
+                <span>d</span>
+                <span>i</span>
+                <span>n</span>
+                <span>g</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== End Loading ==================== -->
+
+
+    <div class="cursor"></div>
+
+
+    <!-- ==================== Start progress-scroll-button ==================== -->
+
+    <div class="progress-wrap cursor-pointer">
+        <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+        </svg>
+    </div>
+
+    <!-- ==================== End progress-scroll-button ==================== -->
+
+    <div class="top-header-area">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-2">
+              <div class="contact-info">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Adres: İstanbul, Türkiye</span>
+              </div>
+             
+            </div>
+            <div class="col-md-3">
+                <div class="contact-info">
+                    <i class="far fa-envelope"></i>
+                    <span>Email: oruphairclinic@gmail.com</span>
+                  </div>
+            </div>
+            <div class="col-md-3 text-center">
+              <!-- Orta boşluk için gerekli içerik -->
+            </div>
+            <div class="col-md-2 text-right">
+                <div class="social-icons">
+                  <a href="#" class="social-icon facebook">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="#" class="social-icon twitter">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="#" class="social-icon instagram">
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="top-drop">
+                    <button class="top-drop-toggle" type="button" id="languageDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <span class="selected-language" style="color: white;">Türkçe</span>
+                      <i class="fas fa-caret-down" style="color: white;"></i>
+                    </button>
+                    <div class="top-drop-menu" aria-labelledby="languageDropdown">
+                      <a class="top-drop-item" href="#">Türkçe</a>
+                      <a class="top-drop-item" href="#">İngilizce</a>
+                      <a class="top-drop-item" href="#">Rusça</a>
+                    </div>
+                </div>
+                  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      
+      
+
+  <div class="middleheaderarea">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <a class="logo icon-img-100" href="#">
+          <img src="assets/imgs/orUpHairClinic.jpg" alt="logo" class="logo-img">
+        </a>
+      </div>
+      <div class="col-md-4 text-center">
+        <!-- Orta boşluk için gerekli içerik -->
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="contact-info">
+          <i class="fas fa-phone icon web-text-color"></i>
+          <a href="tel:123-456-7890" class="phone-link">Telefon: 0546 177 87 76 </a>
+        </div>
+        <div class="contact-info">
+          <i class="far fa-clock icon web-text-color"></i>
+          <a href="tel:123-456-7890" class="phone-link">7/24 Hizmet Vermekteyiz</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+      <!--Form overlay-->
+      <div class="form-overlay" id="form-overlay">
+        <div class="form-container">
+            <h5 style="margin-top: 55px; margin-bottom: 55px;">Bizimle İletişime Geçerek Aklınızda ki Soruları Giderebilirsiniz</h5>
+            <div class="controls row" style="margin-left: 55px; margin-right: 55px;">
+
+                <div class="col-lg-6">
+                    <div class="form-group mb-30">
+                        <input id="form_name" type="text" name="name" placeholder="İsim ve Soyisim"
+                            required="required">
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-group mb-30">
+                        <input id="form_email" type="email" name="email" placeholder="E-Mail Adresiniz"
+                            required="required">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group mb-30">
+                        <input id="form_subject" type="text" name="subject" placeholder="Mesajınız">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group mb-30">
+                        <input id="form_subject" type="number" name="Telefon Numaranız" placeholder="Telefon Numaranız">
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="form-group">
+                        <textarea id="form_message" name="message" placeholder="Mesaj" rows="4"
+                            required="required"></textarea>
+                    </div>
+                    <div class="mt-30">
+                        <button type="submit" class="butn butn-md butn-bord radius-30" style="background-color: rgb(255 255 255);
+                        color: #359fa1;
+                        border-radius: 42px;">
+                            <span class="text">Gönder</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+      <!--Form overlay-->
+
+    <!-- ==================== Start Navbar ==================== -->
+
+    <nav class="navbar navbar-expand-lg static main-bg" >
+        <div class="container">
+
+            <!-- Logo -->
+            <a class="logo icon-img-100" href="#" style="display: none;">
+                <img src="assets/imgs/orUpHairClinic.jpg" alt="logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar"><i class="fas fa-bars"></i></span>
+            </button>
+
+            <!-- navbar links -->
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="page-contact.html"><span class="rolling-text">Anasayfa</span></a>
+                    </li>
+                 
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false"><span class="rolling-text">Kurumsal</span></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="page-about.html">About</a>
+                            <a class="dropdown-item" href="page-services.html">Services</a>
+                            <a class="dropdown-item" href="page-team.html">Our Team</a>
+                            <a class="dropdown-item" href="page-contact.html">Contact Us</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false"><span class="rolling-text">Hakkımızda</span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item">
+                                    <a href="#0">Classic Grid <i class="fas fa-angle-right icon-arrow"></i></a>
+                                    <ul class="dropdown-side">
+                                        <li><a class="dropdown-item" href="portfolio-grid-2.html">Grid 2 Columns</a></li>
+                                        <li><a class="dropdown-item" href="portfolio-grid-3.html">Grid 3 Columns</a></li>
+                                        <li><a class="dropdown-item" href="portfolio-grid-4.html">Grid 4 Columns</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item">
+                                    <a href="#0">Masonry <i class="fas fa-angle-right icon-arrow"></i></a>
+                                    <ul class="dropdown-side">
+                                        <li><a class="dropdown-item" href="portfolio-masonry-2.html">Masonry 2 Columns</a></li>
+                                        <li><a class="dropdown-item" href="portfolio-masonry-3.html">Masonry 3 Columns</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="portfolio-masonry-4.html">Masonry 4 Columns</a></li>
+                                    </ul>
+                                </li>
+                                <li><a class="dropdown-item" href="portfolio-metro.html">Portfolio Metro</a></li>
+                                <li><a class="dropdown-item" href="portfolio-modern.html">Modern Grid</a></li>
+                                <li><a class="dropdown-item" href="project-details1.html">Project Details 1</a></li>
+                                <li><a class="dropdown-item" href="project-details2.html">Project Details 2</a></li>
+                            </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false"><span class="rolling-text">Bloglar</span></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="blog-classic.html">Blog Standerd</a>
+                            <a class="dropdown-item" href="blog-list.html">Blog List</a>
+                            <a class="dropdown-item" href="blog-half-img.html">Image Out Frame</a>
+                            <a class="dropdown-item" href="blog-details.html">Blog Details</a>
+                        </div>
+                    </li>
+                 
+                    <li class="nav-item">
+                        <a class="nav-link" href="page-contact.html"><span class="rolling-text">İletişim</span></a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="search-form">
+                <div class="form-group">
+                    <input type="text" name="search" placeholder="Search">
+                    <button><span class="pe-7s-search"></span></button>
+                </div>
+                <div class="search-icon">
+                    <span class="pe-7s-search open-search"></span>
+                    <span class="pe-7s-close close-search"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== End Navbar ==================== -->
+
+    <main class="main-bg">
+
+        <!-- ==================== Start Slider ==================== -->
+
+        <header class="slider slider-prlx o-hidden">
+            <div class="lines two"></div>
+            <div class="swiper-container parallax-slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="bg-img valign" data-background="assets/imgs/background/sac1.jpg"
+                            data-overlay-dark="7">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        <div class="caption text-center">
+                                            <h6 class="sub-title mb-15">
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                                <span class="ml-10">Kaliteli Hizmet</span>
+                                            </h6>
+                                            <h1 class="fz-60">Saç ve Sakal Naklinde Uzmanlarımızın Dokunuşuyla Kendinizi Yeniden Keşfedin</h1>
+                                            <a href="page-about.html" class="butn butn-md butn-bg main-colorbg3 text-dark mt-30">
+                                                Şimdi İncele
+                                                <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                            fill="currentColor"></path>
+                                                    </svg></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-img valign" data-background="assets/imgs/background/sac2.jpg"
+                            data-overlay-dark="7">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        <div class="caption text-center">
+                                            <h6 class="sub-title mb-15">
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                                <span class="ml-10">Kaliteli Hizmet</span>
+                                            </h6>
+                                            <h1 class="fz-60">Sakal ve Saç Kaybına Son Veren Özgüveninizi Geri Kazanın</h1>
+                                            <a href="page-about.html" class="butn butn-md butn-bg main-colorbg3 text-dark mt-30">
+                                                Şimdi İncele
+                                                <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                            fill="currentColor"></path>
+                                                    </svg></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="bg-img valign" data-background="assets/imgs/background/19.jpg"
+                            data-overlay-dark="7">
+                            <div class="container">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-10">
+                                        <div class="caption text-center">
+                                            <h6 class="sub-title mb-15">
+                                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg>
+                                                <span class="ml-10">Creative Agency</span>
+                                            </h6>
+                                            <h1 class="fz-60">Providing Best Digital Solutions & Grow Business.</h1>
+                                            <a href="page-about.html" class="butn butn-md butn-bg main-colorbg3 text-dark mt-30">
+                                                Şimdi İncele
+                                                <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18"
+                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                            fill="currentColor"></path>
+                                                    </svg></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ==================== End Slider ==================== -->
+
+
+
+       <!-- ==================== Start Services ==================== -->
+
+       <section class="serv-box section-padding pb-0" style="margin-bottom: 50px;">
+        <div class="container">
+            <div class="sec-lg-head mb-80">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="position-re">
+                            <h6 class="dot-titl-non mb-15 wow fadeIn" style="color: white; background-color: #206364;">Featured Services</h6>
+                            <h2 class="d-rotate wow">
+                                <span class="rotate-text">Saç, Sakal ve Kaş Nakli Hizmetleri</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 d-flex align-items-center">
+                        <div class="text wow fadeIn">
+                            <p style="color: black !important;">Nemo enim ipsam voluptatem quia voluptas sit odit aut fugit, sed quia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="serv-item lg-pad md-mb50 radius-5 wow fadeIn" data-wow-delay=".5s">
+                        <div class="icon-img-50 mb-40">
+                            <img src="assets/imgs/serv-icons/0.png" alt="">
+                        </div>
+                        <span class="mb-10 opacity-7" style="color: white;">Hizmet</span>
+                        <h6 class="mb-15"style="color: white;" >Saç Nakli</h6>
+                        <p class="fz-14"style="color: white;">Saç nakli, saç dökülmesi veya seyrek saçlarla mücadele eden kişilere estetik ve kalıcı bir çözüm sunar. Uzman ekibimiz, en son teknikleri kullanarak saç nakli işlemini gerçekleştirir ve doğal görünümlü sonuçlar elde eder.</p>
+                        <div class="crv-more">
+                            <a href="page-services.html" class="mt-30 ls1 fz-12 text-u"style="color: white;">İncele<svg
+                                    width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                        fill="currentColor"></path>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="serv-item lg-pad md-mb50 radius-5 wow fadeIn" data-wow-delay=".8s">
+                        <div class="icon-img-50 mb-40">
+                            <img src="assets/imgs/serv-icons/1.png" alt="">
+                        </div>
+                        <span class="mb-10 opacity-7"style="color: white;">Hizmet</span>
+                        <h6 class="mb-15"style="color: white;">Sakal Nakli</h6>
+                        <p class="fz-14"style="color: white;">Gür ve sağlıklı bir sakal, erkekler için önemli bir erkeklik sembolüdür. Sakal nakli hizmetimizle, sakal bölgesinde seyreklik veya hiç sakal bulunmayan kişilere estetik bir görünüm sağlarız. Deneyimli ekibimiz, bireysel ihtiyaçları dikkate alarak, kişiye özel sakal nakli çözümleri sunar.</p>
+                        <div class="crv-more">
+                            <a href="page-services.html" class="mt-30 ls1 fz-12 text-u"style="color: white;">İncele<svg
+                                    width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                        fill="currentColor"></path>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="serv-item lg-pad radius-5 wow fadeIn" data-wow-delay="1.2s">
+                        <div class="icon-img-50 mb-40">
+                            <img src="assets/imgs/serv-icons/2.png" alt="">
+                        </div>
+                        <span class="mb-10 opacity-7"style="color: white;">Hizmet</span>
+                        <h6 class="mb-15"style="color: white;">Kaş Nakli</h6>
+                        <p class="fz-14"style="color: white;">Kaşlar, yüz ifadesini belirleyen önemli bir öğedir. Seyrek veya hiç kaşları olmayan kişiler için kaş nakli hizmetimiz, doğal ve simetrik kaşlara sahip olmalarını sağlar. Hassas bir şekilde gerçekleştirilen kaş nakli işlemi, estetik açıdan tatmin edici sonuçlar sunar.</p>
+                        <div class="crv-more">
+                            <a href="page-services.html" class="mt-30 ls1 fz-12 text-u"style="color: white;">İncele<svg
+                                    width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                        fill="currentColor"></path>
+                                </svg></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== End Services ==================== -->
+
+
+
+
+
+    <section class="product-details section-padding">
+        <div class="container">
+    
+            <div class="row justify-content-center mt-100" style="    background: white;
+            padding: 55px;
+            border-radius: 44px;">
+                <div class="col-lg-11">
+                    <div class="overview" id="tabs">
+                        <ul class="rest tab-links mb-30">
+                            <li class="item-link current" data-tab="tabs-1" style="margin-right: 0;">
+                                <div class="item-wrapper-info">
+                                    <button class="tab-button active">
+                                        <img src="assets/imgs/icons/hair.png" alt="Logo 1" class="logo-icons">
+                                        <h6>Saç Nakli - DHI</h6>
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="item-link" data-tab="tabs-2" style="margin-right: 0;">
+                                <div class="item-wrapper-info">
+                                    <button class="tab-button active">
+                                        <img src="assets/imgs/icons/beard.png" alt="Logo 2" class="logo-icons">
+                                        <h6>Sakal Nakli</h6>
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="item-link" data-tab="tabs-3" style="margin-right: 0;">
+                                <div class="item-wrapper-info">
+                                    <button class="tab-button active">
+                                        <img src="assets/imgs/icons/eyebrow.png" alt="Logo 3" class="logo-icons">
+                                        <h6>Kaş Nakli</h6>
+                                    </button>
+                                </div>
+                            </li>
+                            <li class="item-link" data-tab="tabs-4" style="margin-right: 0;">
+                                <div class="item-wrapper-info">
+                                    <button class="tab-button active">
+                                        <img src="assets/imgs/icons/safir.png" alt="Logo 3" class="logo-icons">
+                                        <h6>Saç Nakli - FUE</h6>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="tab-cont">
+                            <div class="tab-content current" id="tabs-1">
+                                <div class="item">
+                                    <div class="text">
+                                        <p class="mb-15">Merkezimiz, DHI saç ekimi yöntemini yaklaşık 10 yıldır başarıyla uygulamaktadır ve bu alanda önde gelen merkezlerden biridir.
+                                             DHI saç ekimi, FUE saç ekimi yöntemine göre daha yeni bir jenerasyon teknolojisidir. Uygulama sürecinde cerrahi deneyim ve estetik bakış açısı büyük önem taşır.
+                                              OrUpHairClinic İstanbul olarak, DHI saç ekimi konusunda uzman ekibimizle hizmet vermekteyiz.
+                                        </p>
+                                        <a href="page-about.html" class="butn butn-md butn-bg main-colorbg3 text-dark mt-30">
+                                            Şimdi İncele
+                                            <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content" id="tabs-2">
+                                <div class="item">
+                                    <div class="text">
+                                        <p class="mb-15">Sakal nakli işlemi, saç ekimi işlemine benzer bir şekilde gerçekleştirilir.
+                                             Saç kökleri (greftler) genellikle ense bölgesinden alınır ve ardından seyrek olan veya tamamen boş olan sakal alanlarına tek tek yerleştirilir. 
+                                             Bu işlem, uzman bir cerrahın hassas bir şekilde yapması gereken bir işlemdir.
+                                        </p>
+                                        <a href="page-about.html" class="butn butn-md butn-bg main-colorbg3 text-dark mt-30">
+                                            Şimdi İncele
+                                            <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content" id="tabs-3">
+                                <div class="item">
+                                    <div class="text">
+                                        <p class="mb-15">Kaş nakli işlemi, saç ekimi işlemine benzer bir şekilde gerçekleştirilir.
+                                             Saç kökleri (greftler) genellikle ense bölgesinden alınır ve sonra seyrek olan veya tamamen kaybolan kaş alanlarına tek tek yerleştirilir. 
+                                             Bu işlem, hassas bir cerrahi beceri ve estetik anlayış gerektirir. Kaşların doğal görünümünü yakalamak için kaş hattının şekli, açısı ve yoğunluğu dikkatlice planlanmalıdır.
+                                        </p>
+                                        <a href="page-about.html" class="butn butn-md butn-bg main-colorbg3 text-dark mt-30">
+                                            Şimdi İncele
+                                            <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-content" id="tabs-4">
+                                <div class="item">
+                                    <div class="text">
+                                        <p class="mb-15">Safir saç ekimi, son yıllarda popülerlik kazanan bir saç ekimi yöntemidir.
+                                             Bu yöntemde, kanal açma aşamasında safir taşından yapılmış kesici uçlar kullanılırken, FUE saç ekiminde kullanılan çelik uçlardan farklı olarak daha hassas bir yaklaşım benimsenmektedir.
+                                              Ancak, safir saç ekimi tekniği adıyla anılmasını doğru bir tabir olarak görmüyoruz.
+                                        </p>
+                                        <a href="page-about.html" class="butn butn-md butn-bg main-colorbg3 text-dark mt-30">
+                                            Şimdi İncele
+                                            <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18"
+                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+    </section>
+
+
+
+
+            <!-- ==================== Start about company ==================== -->
+
+            <section class="intro-corp section-padding sub-bg">
+                <div class="container">
+                    <div class="row lg-marg">
+                        <div class="col-lg-6 md-mb50">
+                            <div class="imgs mb-80">
+                                <div class="img1 main-color3">
+                                    <img src="assets/imgs/before/vip-car.jpg" alt="">
+                                </div>
+                                <div class="img2">
+                                    <img src="assets/imgs/before/ozel-konaklama.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 valign">
+                            <div class="cont">
+                                <h6 class="sub-title mb-15">OrUpHairClinic Hakkında</h6>
+                                <h3 class="mb-15">OrUpHairClinic Olarak Her Bütçeye Uygun Hizmet Paketlerimiz</h3>
+
+                                <div class="mt-50 pt-30 bord-thin-top">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <ul class="rest list-arrow">
+                                                <li class="mt-20">
+                                                    <span class="icon">
+                                                        <svg width="100%" height="100%" viewBox="0 0 9 8" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M7.71108 3.78684L8.22361 4.29813L7.71263 4.80992L4.64672 7.87832L4.13433 7.36688L6.87531 4.62335H1.11181H0.750039H0.388177L0.382812 0.718232H1.10645L1.11082 3.90005H6.80113L4.12591 1.22972L4.63689 0.718262L7.71108 3.78684Z"
+                                                                fill="#000"></path>
+                                                        </svg>
+                                                    </span>
+                                                    <span style="font-size: 17px;">Konaklama Hizmeti: Müşterilerimize konforlu ve lüks konaklama imkanı sunarak, saç nakli sürecinde rahat bir deneyim yaşamalarını sağlıyoruz.</span>
+                                                </li>
+                                                <li class="mt-20">
+                                                    <span class="icon">
+                                                        <svg width="100%" height="100%" viewBox="0 0 9 8" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M7.71108 3.78684L8.22361 4.29813L7.71263 4.80992L4.64672 7.87832L4.13433 7.36688L6.87531 4.62335H1.11181H0.750039H0.388177L0.382812 0.718232H1.10645L1.11082 3.90005H6.80113L4.12591 1.22972L4.63689 0.718262L7.71108 3.78684Z"
+                                                                fill="#000"></path>
+                                                        </svg>
+                                                    </span>
+                                                    <span style="font-size: 17px;">Ulaşım/Transfer Hizmeti: Saç nakli için gerekli olan tüm ulaşım ve transfer ihtiyaçlarınızı profesyonel bir şekilde karşılayarak, müşterilerimize konforlu bir seyahat sağlıyoruz.
+
+                                                    </span>
+                                                </li>
+                                                <li class="mt-20">
+                                                    <span class="icon">
+                                                        <svg width="100%" height="100%" viewBox="0 0 9 8" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                d="M7.71108 3.78684L8.22361 4.29813L7.71263 4.80992L4.64672 7.87832L4.13433 7.36688L6.87531 4.62335H1.11181H0.750039H0.388177L0.382812 0.718232H1.10645L1.11082 3.90005H6.80113L4.12591 1.22972L4.63689 0.718262L7.71108 3.78684Z"
+                                                                fill="#000"></path>
+                                                        </svg>
+                                                    </span>
+                                                    <span style="font-size: 17px;">Profesyonel Ekip: Deneyimli ve uzman bir ekibimizle çalışarak, müşterilerimize en yüksek kalitede saç nakli hizmeti sunuyoruz.</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="page-about.html" class="butn butn-md butn-bord radius-30 mt-50">
+                                    <span>Şimdi İletişime Geçin</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <!-- ==================== End about company ==================== -->
+
+
+
+         <!-- ==================== Start Blog ==================== -->
+
+         <section class="blog-modern section-padding sub-bg">
+            <div class="container">
+                <div class="row">     
+                    <h2 class="d-rotate wow" style="margin-bottom:35px ;">
+                        <span class="rotate-text">Saç, Sakal ve Kaş Nakli Yorumları</span>
+                    </h2>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="item mb-50">
+                            <div class="img">
+                                <img src="assets/imgs/before/before.png" alt="">
+                                <div class="date">
+                                    <a href="blog-details.html">30 august 2021</a>
+                                </div>
+                            </div>
+                            <div class="cont mt-30">
+                                <h6>
+                                    <a href="blog-details.html">Before/After
+                                        </a>
+                                </h6>
+                                <a href="blog-details.html" class="mt-20 ls1 sub-title">Şimdi İncele <i
+                                        class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z" fill="currentColor"></path>
+                                        </svg></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="item mb-50">
+                            <div class="img">
+                                <img src="assets/imgs/before/before.png" alt="">
+                                <div class="date">
+                                    <a href="blog-details.html">30 august 2021</a>
+                                </div>
+                            </div>
+                            <div class="cont mt-30">
+                                <h6>
+                                    <a href="blog-details.html">Before/After
+                                        </a>
+                                </h6>
+                                <a href="blog-details.html" class="mt-20 ls1 sub-title">Şimdi İncele <i
+                                    class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z" fill="currentColor"></path>
+                                    </svg></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="item mb-50">
+                            <div class="img">
+                                <img src="assets/imgs/before/before.png" alt="">
+                                <div class="date">
+                                    <a href="blog-details.html">30 august 2021</a>
+                                </div>
+                            </div>
+                            <div class="cont mt-30">
+                                <h6>
+                                    <a href="blog-details.html">Before/After
+                                        </a>
+                                </h6>
+                                <a href="blog-details.html" class="mt-20 ls1 sub-title">Şimdi İncele <i
+                                    class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z" fill="currentColor"></path>
+                                    </svg></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== End Blog ==================== -->
+
+
+
+        <!-- ==================== Start Testimonials ==================== -->
+
+        <section class="testim-crv section-padding main-colorbg text-dark position-re" style="background-color: #3fbec1; color: white;">
+            <div class="container ontop">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="sec-head md-mb50">
+                            <h6 class="sub-title wow fadeInUp">İnsanlar Hakkımızda Ne Düşünüyor ?</h6>
+                            <h2 class="d-rotate wow">
+                                <span class="rotate-text" style="color: white;">Hastalarımızın Yorumları</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-md-6 valign">
+                        <div class="swiper-controls testim-controls arrow-out d-flex justify-content-end justify-end-sm full-width">
+                            <div class="d-flex ">
+                                <div class="swiper-button-prev">
+                                    <span class="left">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.2031 10.3281L11.5781 15.9531C11.535 15.9961 11.4839 16.0303 11.4276 16.0536C11.3713 16.077 11.3109 16.089 11.25 16.089C11.1891 16.089 11.1287 16.077 11.0724 16.0536C11.0161 16.0303 10.965 15.9961 10.9219 15.9531C10.8788 15.91 10.8446 15.8588 10.8213 15.8025C10.798 15.7462 10.786 15.6859 10.786 15.6249C10.786 15.564 10.798 15.5036 10.8213 15.4473C10.8446 15.391 10.8788 15.3399 10.9219 15.2968L15.7422 10.4687H3.125C3.00068 10.4687 2.88145 10.4193 2.79354 10.3314C2.70564 10.2435 2.65625 10.1242 2.65625 9.99993C2.65625 9.87561 2.70564 9.75638 2.79354 9.66847C2.88145 9.58056 3.00068 9.53118 3.125 9.53118H15.7422L10.9219 4.70305C10.8349 4.61603 10.786 4.498 10.786 4.37493C10.786 4.25186 10.8349 4.13383 10.9219 4.0468C11.0089 3.95978 11.1269 3.91089 11.25 3.91089C11.3731 3.91089 11.4911 3.95978 11.5781 4.0468L17.2031 9.6718C17.2476 9.71412 17.2829 9.76503 17.3071 9.82143C17.3313 9.87784 17.3438 9.93856 17.3438 9.99993C17.3438 10.0613 17.3313 10.122 17.3071 10.1784C17.2829 10.2348 17.2476 10.2857 17.2031 10.3281Z"
+                                                fill="#1d1d1d"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="swiper-button-next ml-50">
+                                    <span class="right">
+                                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M17.2031 10.3281L11.5781 15.9531C11.535 15.9961 11.4839 16.0303 11.4276 16.0536C11.3713 16.077 11.3109 16.089 11.25 16.089C11.1891 16.089 11.1287 16.077 11.0724 16.0536C11.0161 16.0303 10.965 15.9961 10.9219 15.9531C10.8788 15.91 10.8446 15.8588 10.8213 15.8025C10.798 15.7462 10.786 15.6859 10.786 15.6249C10.786 15.564 10.798 15.5036 10.8213 15.4473C10.8446 15.391 10.8788 15.3399 10.9219 15.2968L15.7422 10.4687H3.125C3.00068 10.4687 2.88145 10.4193 2.79354 10.3314C2.70564 10.2435 2.65625 10.1242 2.65625 9.99993C2.65625 9.87561 2.70564 9.75638 2.79354 9.66847C2.88145 9.58056 3.00068 9.53118 3.125 9.53118H15.7422L10.9219 4.70305C10.8349 4.61603 10.786 4.498 10.786 4.37493C10.786 4.25186 10.8349 4.13383 10.9219 4.0468C11.0089 3.95978 11.1269 3.91089 11.25 3.91089C11.3731 3.91089 11.4911 3.95978 11.5781 4.0468L17.2031 9.6718C17.2476 9.71412 17.2829 9.76503 17.3071 9.82143C17.3313 9.87784 17.3438 9.93856 17.3438 9.99993C17.3438 10.0613 17.3313 10.122 17.3071 10.1784C17.2829 10.2348 17.2476 10.2857 17.2031 10.3281Z"
+                                                fill="#1d1d1d"></path>
+                                        </svg>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-80">
+                        <div class="testim-swiper testim-swiper3 to-out" data-carousel="swiper" data-items="3" data-loop="true"
+                            data-space="30" data-speed="1000">
+                            <div id="content-carousel-container-unq-testim" class="swiper-container"
+                                data-swiper="container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide wow fadeIn">
+                                        <div class="item bg-white">
+                                            <div class="cont mb-40">
+                                                <div class="rate-stars mb-20 fz-12">
+                                                    <span class="rate">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <p class="fw-400">"Sakal nakli için bu firmayı tercih ettim ve kararımı asla pişman olmadım.
+                                                     Uzman ekibin titiz çalışması ve sonuçlar gerçekten şaşırtıcı. Kendimi daha özgüvenli hissediyorum."</p>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                               
+                                                <div class="ml-30">
+                                                    <div class="info">
+                                                        <h6 class="fz-16"> - Yılmaz K.</h6>
+                                                        <span class="opacity-7 sub-title">Müşteri</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide wow fadeIn">
+                                        <div class="item bg-white">
+                                            <div class="cont mb-40">
+                                                <div class="rate-stars mb-20 fz-12">
+                                                    <span class="rate">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <p class="fw-400">"Saç nakli sürecinde profesyonel bir ekip ile çalışmak harikaydı. Sonuçlar inanılmaz ve beni çok mutlu etti. Herkese gönül rahatlığıyla tavsiye ederim."</p>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="ml-30">
+                                                    <div class="info">
+                                                        <h6 class="fz-16"> - Hakan A.</h6>
+                                                        <span class="opacity-7 sub-title">Müşteri</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide wow fadeIn">
+                                        <div class="item bg-white">
+                                            <div class="cont mb-40">
+                                                <div class="rate-stars mb-20 fz-12">
+                                                    <span class="rate">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <p class="fw-400">"Saç dökülmesi problemim için bu firma ile çalışmak çok doğru bir seçim oldu. Profesyonel yaklaşım, kaliteli hizmet ve harika sonuçlar. Çok teşekkür ederim!"</p>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="ml-30">
+                                                    <div class="info">
+                                                        <h6 class="fz-16"> - Ali S.</h6>
+                                                        <span class="opacity-7 sub-title">Müşteri</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide wow fadeIn">
+                                        <div class="item bg-white">
+                                            <div class="cont mb-40">
+                                                <div class="rate-stars mb-20 fz-12">
+                                                    <span class="rate">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <p class="fw-400">"Sakal nakli için çok araştırma yaptım ve bu firmanın yorumları beni ikna etti. Deneyimleri ve uzmanlıkları sayesinde son derece doğal ve estetik bir sakala kavuştum. Çok memnunum." </p>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="ml-30">
+                                                    <div class="info">
+                                                        <h6 class="fz-16"> - Mehmet A.</h6>
+                                                        <span class="opacity-7 sub-title">Müşteri</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide wow fadeIn">
+                                        <div class="item bg-white">
+                                            <div class="cont mb-40">
+                                                <div class="rate-stars mb-20 fz-12">
+                                                    <span class="rate">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                    </span>
+                                                </div>
+                                                <p class="fw-400">"Saç nakli konusunda çok hassas biriyim ve bu firma benim beklentilerimi tam anlamıyla karşıladı. Profesyonel bir ekip, rahatlatıcı bir atmosfer ve harika sonuçlar. Şiddetle tavsiye ederim!"  </p>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <div class="ml-30">
+                                                    <div class="info">
+                                                        <h6 class="fz-16"> - Burak M.</h6>
+                                                        <span class="opacity-7 sub-title">Müşteri</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="clients-carso section-padding pb-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="swiper5" data-carousel="swiper" data-items="6" data-loop="true" data-space="30"
+                                data-speed="1000">
+                                <div id="content-carousel-container-unq-clients" class="swiper-container"
+                                    data-swiper="container">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="img icon-img-100">
+                                                    <a href="https://themeforest.net/user/ui-themez">
+                                                        <img src="assets/imgs/brands/01.png" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="img icon-img-100">
+                                                    <a href="https://themeforest.net/user/ui-themez">
+                                                        <img src="assets/imgs/brands/02.png" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="img icon-img-100">
+                                                    <a href="https://themeforest.net/user/ui-themez">
+                                                        <img src="assets/imgs/brands/03.png" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="img icon-img-100">
+                                                    <a href="https://themeforest.net/user/ui-themez">
+                                                        <img src="assets/imgs/brands/04.png" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="item">
+                                                <div class="img icon-img-100">
+                                                    <a href="https://themeforest.net/user/ui-themez">
+                                                        <img src="assets/imgs/brands/05.png" alt="">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-pattern bg-img bg-repeat" data-background="assets/imgs/patterns/noise.png"></div>
+        </section>
+
+        <!-- ==================== End Testimonials ==================== -->
+
+
+
+
+          <!-- ==================== Start video ==================== -->
+
+          <section class="blog-crev section-padding">
+            <div class="container">
+                <div class="sec-lg-head mb-80">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="position-re">
+                                <h6 class="dot-titl colorbg-3 mb-10">Memnuniyet</h6>
+                                <h2 class="fz-60 fw-700">Memnuniyet</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-flex align-items-center">
+                            <div class="full-width d-flex justify-content-end justify-end">
+                                <div class="vew-all wow fadeIn">
+                                    <a href="blog-classic.html">Tümünü Gör
+                                        <span>
+                                            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                    fill="currentColor"></path>
+                                            </svg>
+                                        </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+       
+                <div class="row">
+                    <div class="col-lg-4 card-video">
+                        <div class="item md-mb50">
+                            <div class="cont">
+                                
+                                <div class="info mt-20 mb-20 pt-20 bord-thin-top">
+                                    <span class="by">
+                                        <a href="blog-classic.html"><i class="far fa-user fz-14 mr-10"></i> By Admin</a>
+                                    </span>
+                                    <span class="dot main-colorbg3"></span>
+                                    <span class="date">
+                                        <a href="blog-details.html"><i class="far fa-calendar-alt fz-14 mr-10"></i>
+                                            august 6, 2021</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="img-vid">
+                                <div class="video-container">
+                                    <video controls>
+                                        <source src="assets/imgs/OrupV2.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 card-video">
+                        <div class="item md-mb50">
+                            <div class="cont">
+                                
+                                <div class="info mt-20 mb-20 pt-20 bord-thin-top">
+                                    <span class="by">
+                                        <a href="blog-classic.html"><i class="far fa-user fz-14 mr-10"></i> By Admin</a>
+                                    </span>
+                                    <span class="dot main-colorbg3"></span>
+                                    <span class="date">
+                                        <a href="blog-details.html"><i class="far fa-calendar-alt fz-14 mr-10"></i>
+                                            august 6, 2021</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="img-vid">
+                                <div class="video-container">
+                                    <video controls>
+                                        <source src="assets/imgs/umitbey.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 card-video">
+                        <div class="item">
+                            <div class="cont main-bg">
+                               
+                                <div class="info mt-20 mb-20 pt-20 bord-thin-top">
+                                    <span class="by">
+                                        <a href="blog-classic.html"><i class="far fa-user fz-14 mr-10"></i> By Admin</a>
+                                    </span>
+                                    <span class="dot main-colorbg3"></span>
+                                    <span class="date">
+                                        <a href="blog-details.html"><i class="far fa-calendar-alt fz-14 mr-10"></i>
+                                            august 6, 2021</a>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="img-vid">
+                                <div class="video-container">
+                                    <video controls>
+                                        <source src="assets/imgs/OrUpv03.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+          
+                  
+                </div>
+                <a href="page-contact.html" class="butn butn-md butn-bord mt-30">
+                    <span>Tümünü Gör</span>
+                    <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                fill="currentColor"></path>
+                        </svg></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- ==================== End video ==================== -->
+
+               <!-- ==================== Start about ==================== -->
+
+       <section class="intro-corp section-padding">
+        <div class="container">
+            <div class="row justify-content-around">
+                <div class="col-lg-5 valign md-mb50">
+                    <div class="imgs mb-80">
+                        <div class="img1 wow fadeInUp">
+                            <img src="assets/imgs/before/before1.jpeg" alt="">
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-lg-5 valign">
+                    <div class="cont">
+                        <div class="text">
+                            <h2 class="d-slideup wow">
+                                <span class="sideup-text">
+                                    <span class="up-text">Sıkça Sorulan Sorular</span>
+                                </span>
+                            </h2>
+                        </div>
+                        <div class="accordion bord mt-40">
+
+                            <div class="item mb-15 wow fadeInUp" data-wow-delay=".1s">
+                                <div class="title">
+                                    <h6 class="fz-18">Saç nakli nedir ve nasıl gerçekleşir?</h6>
+                                    <span class="ico"></span>
+                                </div>
+                                <div class="accordion-info">
+                                    <p class="fz-14">Saç nakli, saçlı deriden alınan sağlıklı saç köklerinin, kellik veya seyreklik yaşanan bölgelere transfer edilmesi işlemidir. 
+                                        İşlem genellikle lokal anestezi altında gerçekleştirilir. Saç kökleri tek tek veya küçük gruplar halinde alınır ve alıcı bölgeye yerleştirilir.</p>
+                                </div>
+                            </div>
+
+                            <div class="item mb-15 wow fadeInUp" data-wow-delay=".3s">
+                                <div class="title">
+                                    <h6 class="fz-18">Saç nakli işlemi acı verici midir?</h6>
+                                    <span class="ico"></span>
+                                </div>
+                                <div class="accordion-info">
+                                    <p class="fz-14">Saç nakli işlemi lokal anestezi altında gerçekleştirildiği için acı hissi minimaldir. Anestezi bölgesel olarak uygulandığından, işlem sırasında rahatsızlık hissi oluşmaz.
+                                         Ancak işlem sonrası hafif bir rahatsızlık, şişlik veya yanma hissi olabilir, ancak bunlar genellikle geçicidir.</p>
+                                </div>
+                            </div>
+
+                            <div class="item wow fadeInUp" data-wow-delay=".5s">
+                                <div class="title">
+                                    <h6 class="fz-18">Saç nakli sonuçları ne zaman görülmeye başlar?</h6>
+                                    <span class="ico"></span>
+                                </div>
+                                <div class="accordion-info">
+                                    <p class="fz-14">Saç nakli sonuçları zamanla belirginleşir. İşlem sonrası ilk birkaç hafta içinde nakledilen saçlar dökülebilir, ancak bu normaldir. 
+                                        Yeni saçlar, saç köklerinin yerleştirildiği bölgelerde yeniden büyümeye başlar ve genellikle 3-6 ay içinde belirgin hale gelir. Tam sonuçlar ise 12-18 ay gibi bir sürede ortaya çıkar.</p>
+                                </div>
+                            </div>
+
+                            <div class="item wow fadeInUp" data-wow-delay=".5s">
+                                <div class="title">
+                                    <h6 class="fz-18">Saç nakli sonrası bakım nasıl olmalıdır?</h6>
+                                    <span class="ico"></span>
+                                </div>
+                                <div class="accordion-info">
+                                    <p class="fz-14">Saç nakli sonrası düzenli ve özenli bir bakım gerekmektedir. İşlem sonrası doktorunuz tarafından size verilen talimatlara uymanız önemlidir. İlk birkaç gün boyunca kafa derinizi koruyan bir bandaj kullanmanız gerekebilir.
+                                         Ayrıca önerilen şampuanlar ve losyonlar kullanarak saçlarınızı temiz ve sağlıklı tutmalısınız.
+                                          Aşırı sıcaklık, güneş ışığı ve ağır fiziksel aktivitelerden kaçınmanız da önemlidir.
+                                           Saç nakli sonrası düzenli takip randevularına gitmek ve doktorunuzun önerilerini takip etmek, başarılı sonuçlar elde etmenize yardımcı olur.</p>
+                                </div>
+                            </div>
+                            <div class="item wow fadeInUp" data-wow-delay=".5s">
+                                <div class="title">
+                                    <h6 class="fz-18">FUE (Follicular Unit Extraction) Saç Ekimi Nedir?</h6>
+                                    <span class="ico"></span>
+                                </div>
+                                <div class="accordion-info">
+                                    <p class="fz-14">FUE saç ekimi, en sık tercih edilen ve yaygın olarak kullanılan bir saç restorasyon yöntemidir. Bu yöntemde, donör bölgeden (genellikle arka veya yan baş bölgesi) tek tek saç kökleri alınır.
+                                         Bu işlem, mikrocerrahi aletler kullanılarak gerçekleştirilir. Alınan saç kökleri daha sonra kaybolan veya seyrek olan bölgelere yerleştirilir. 
+                                         FUE yöntemi, minimal izler bırakan, hızlı iyileşme sürecine sahip ve genellikle acısız bir işlemdir. Bu yöntemle elde edilen sonuçlar doğal ve kalıcıdır.</p>
+                                </div>
+                            </div>
+                            <div class="item wow fadeInUp" data-wow-delay=".5s">
+                                <div class="title">
+                                    <h6 class="fz-18">DHI (Direct Hair Implantation) Saç Ekimi Nedir?  </h6>
+                                    <span class="ico"></span>
+                                </div>
+                                <div class="accordion-info">
+                                    <p class="fz-14">DHI saç ekimi, FUE saç ekimi yöntemine benzer bir süreç izler, ancak saç köklerinin yerleştirilmesi aşamasında farklılık gösterir.
+                                         DHI saç ekiminde, özel bir cihaz kullanılarak saç kökleri doğrudan alıcı bölgeye yerleştirilir.
+                                          Yani, saç kökleri alındıktan sonra ayrı bir adıma ihtiyaç duyulmadan hemen nakledilir.
+                                           Bu yöntem, doğal bir saç çizgisi oluşturmak ve daha yoğun bir görünüm elde etmek için hassas bir şekilde saç köklerinin yerleştirilmesini sağlar. 
+                                           DHI yöntemi, daha az invaziv bir işlem olmasının yanı sıra iyileşme süreci ve sonuçlar açısından da etkileyicidir.</p>
+                                </div>
+                            </div>
+                            <div class="item wow fadeInUp" data-wow-delay=".5s">
+                                <div class="title">
+                                    <h6 class="fz-18">Sakal Nakli Nedir?</h6>
+                                    <span class="ico"></span>
+                                </div>
+                                <div class="accordion-info">
+                                    <p class="fz-14">Sakal nakli, yüz bölgesindeki sakal seyrekliğini veya sakal kaybını düzeltmek amacıyla uygulanan bir işlemdir.
+                                         Sakal nakli genellikle FUE veya DHI yöntemiyle gerçekleştirilir. Donör bölgeden saç kökleri alınarak, sakalın eksik veya seyrek olduğu bölgelere nakledilir.
+                                          Bu işlem, yüz hatlarını belirginleştirmek, daha dolgun ve simetrik bir sakal görünümü elde etmek için ideal bir çözüm sunar.</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== End about ==================== -->
+
+        
+        <!-- ==================== Start Pricing ==================== -->
+
+        <!-- <section class="pricing section-padding sub-bg">
+            <div class="container">
+                <div class="sec-lg-head mb-80">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <div class="position-re">
+                                <h6 class="dot-titl colorbg-3 mb-10">Featured Services</h6>
+                                <h2 class="fz-60 fw-700">Our Services</h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 d-flex align-items-center">
+                            <div class="text">
+                                <p>Nemo enim ipsam voluptatem quia voluptas sit odit aut fugit, sed quia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row md-marg">
+                    <div class="col-lg-4">
+                        <div class="item main-bg position-re o-hidden md-mb50">
+                            <div class="info-box pb-30 bord-thin-bottom mb-30">
+                                <h6 class="sub-title mb-15">Basic Plan</h6>
+                                
+                                <p class="fz-13">10% taxes will include after make price.</p>
+                            </div>
+                            <ul class="rest">
+                                <li>10 Hours of task work</li>
+                                <li>1 User included</li>
+                                <li>Advertising</li>
+                                <li>Web developments</li>
+                                <li>24 / 7 Support</li>
+                            </ul>
+                            <a href="page-contact.html" class="butn butn-md butn-bord mt-30">
+                                <span>Get Started</span>
+                                <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                            fill="currentColor"></path>
+                                    </svg></i>
+                            </a>
+                            <div class="bg-pattern bg-img opacity-1" data-background="assets/imgs/patterns/1.svg"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="item main-bg position-re o-hidden md-mb50">
+                            <div class="info-box pb-30 bord-thin-bottom mb-30">
+                                <h6 class="sub-title mb-15">Basic Plan</h6>
+                                
+                                <p class="fz-13">10% taxes will include after make price.</p>
+                            </div>
+                            <ul class="rest">
+                                <li>10 Hours of task work</li>
+                                <li>1 User included</li>
+                                <li>Advertising</li>
+                                <li>Web developments</li>
+                                <li>24 / 7 Support</li>
+                            </ul>
+                            <a href="page-contact.html" class="butn butn-md butn-bg main-colorbg3 text-dark mt-30">
+                                <span>Get Started</span>
+                                <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                            fill="currentColor"></path>
+                                    </svg></i>
+                            </a>
+                            <div class="bg-pattern bg-img opacity-3"
+                                data-background="assets/imgs/patterns/abstact-BG.png"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="item main-bg position-re o-hidden">
+                            <div class="info-box pb-30 bord-thin-bottom mb-30">
+                                <h6 class="sub-title mb-15">Basic Plan</h6>
+                                
+                                <p class="fz-13">10% taxes will include after make price.</p>
+                            </div>
+                            <ul class="rest">
+                                <li>10 Hours of task work</li>
+                                <li>1 User included</li>
+                                <li>Advertising</li>
+                                <li>Web developments</li>
+                                <li>24 / 7 Support</li>
+                            </ul>
+                            <a href="page-contact.html" class="butn butn-md butn-bord mt-30">
+                                <span>Get Started</span>
+                                <i class="ml-5"><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                            fill="currentColor"></path>
+                                    </svg></i>
+                            </a>
+                            <div class="bg-pattern bg-img opacity-1" data-background="assets/imgs/patterns/1.svg"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- ==================== End Pricing ==================== -->
+
+
+
+    </main>
+
+    <!-- ==================== Start call to action ==================== -->
+
+    <section class="call-action-img">
+        <div class="container">
+            <div class="sec-bg-img bg-img parallaxie" data-background="assets/imgs/background/sac1.jpg"></div>
+            <div class="sec-lg-head section-padding">
+                <div class="row ontop">
+                    <div class="col-11 d-flex align-items-center">
+                        <div class="valign">
+                            <h2 class="fz-50 d-rotate wow">
+                                <span class="rotate-text" style="font-size: 23px;">Sizlere en kısa sürede yanıt vermek için buradayız! 
+                                    Herhangi bir soru, görüş veya randevu talepleriniz için bize ulaşmaktan çekinmeyin. Size yardımcı olmaktan memnuniyet duyarız</span>
+                            </h2>
+                        </div>
+                        <div class="ml-auto">
+                            <a href="#0" class="butn-circle d-flex align-items-center text-center m-auto">
+                                <div class="full-width">
+                                    <span><svg width="18" height="18" viewBox="0 0 18 18" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.922 4.5V11.8125C13.922 11.9244 13.8776 12.0317 13.7985 12.1108C13.7193 12.1899 13.612 12.2344 13.5002 12.2344C13.3883 12.2344 13.281 12.1899 13.2018 12.1108C13.1227 12.0317 13.0783 11.9244 13.0783 11.8125V5.51953L4.79547 13.7953C4.71715 13.8736 4.61092 13.9176 4.50015 13.9176C4.38939 13.9176 4.28316 13.8736 4.20484 13.7953C4.12652 13.717 4.08252 13.6108 4.08252 13.5C4.08252 13.3892 4.12652 13.283 4.20484 13.2047L12.4806 4.92188H6.18765C6.07577 4.92188 5.96846 4.87743 5.88934 4.79831C5.81023 4.71919 5.76578 4.61189 5.76578 4.5C5.76578 4.38811 5.81023 4.28081 5.88934 4.20169C5.96846 4.12257 6.07577 4.07813 6.18765 4.07812H13.5002C13.612 4.07813 13.7193 4.12257 13.7985 4.20169C13.8776 4.28081 13.922 4.38811 13.922 4.5Z"
+                                                fill="currentColor"></path>
+                                        </svg></span>
+                                    <span class="full-width">Şimdi İletişime Geçin</span>
+                                </div>
+                                <img src="assets/imgs/svg-assets/circle-star.svg" alt="" class="circle-star">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== End call to action ==================== -->
+
+
+
+    <!-- ==================== Start Footer ==================== -->
+
+    <footer class="pt-80">
+        <div class="container pb-80">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="colum md-mb50">
+                        <div class="tit mb-20">
+                            <h6>Address</h6>
+                        </div>
+                        <div class="text">
+                            <p>Türkiye/İstanbul</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 offset-lg-1">
+                    <div class="colum md-mb50">
+                        <div class="tit mb-20">
+                            <h6>İletişim Adresi</h6>
+                        </div>
+                        <div class="text">
+                            <p class="mb-10">
+                                <a href="#0">oruphairclinic@gmail.com</a>
+                            </p>
+                            <h5>
+                                <a href="#">0546 177 87 76</a>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 md-mb50">
+                    <div class="tit mb-20">
+                        <h6>Sosyal Medya</h6>
+                    </div>
+                    <ul class="rest social-text">
+                        <li>
+                            <a href="#0">Facebook</a>
+                        </li>
+                        <li>
+                            <a href="#0">Twitter</a>
+                        </li>
+                        <li>
+                            <a href="#0">Instagram</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <div class="tit mb-20">
+                        <h6>Mailinizi Bırakın, Sizinle İletişime Geçelim</h6>
+                    </div>
+                    <div class="subscribe">
+                        <form action="contact.php">
+                            <div class="form-group rest">
+                                <input type="email" placeholder="Type Your Email">
+                                <button type="submit">
+                                    <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sub-footer pt-40 pb-40 bord-thin-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright d-flex">
+                            <div class="ml-auto">
+                                <p class="fz-13">OnUpHairClinic © Copyright 2023. Tüm Hakları Saklıdır.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== End Footer ==================== -->
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/jquery-migrate-3.4.0.min.js"></script>
+
+    <!-- plugins -->
+    <script src="assets/js/plugins.js"></script>
+
+    <script src="assets/js/ScrollTrigger.min.js"></script>
+
+    <!-- custom scripts -->
+    <script src="assets/js/scripts.js"></script>
+    <script>
+        // Dropdown menüsünü açma/kapatma işlemleri
+        var dropdownToggle = document.querySelector('.top-drop-toggle');
+        dropdownToggle.addEventListener('click', function() {
+          var dropdownMenu = document.querySelector('.top-drop-menu');
+          dropdownMenu.classList.toggle('show');
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+    var formOverlay = document.getElementById("form-overlay");
+    var formContainer = document.getElementById("form-container");
+
+    function showForm() {
+        formOverlay.classList.add("show");
+    }
+
+    function hideForm() {
+        formOverlay.classList.remove("show");
+    }
+
+    formOverlay.addEventListener("click", function(event) {
+        if (event.target === formOverlay) {
+            hideForm();
+        }
+    });
+
+    setTimeout(showForm, 10000); // 10 saniye sonra formu gösterir
+});
+    </script>
+      
+
+</body>
+
+</html>
